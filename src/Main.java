@@ -12,7 +12,7 @@ public class Main {
         Random rand = new Random();
 
         // Variables enemigos
-        String[] enemies = {"Skeleton", "Zombie", "Warrior", "Demon"};
+        String[] enemies = {"Skeleton", "Zombie", "Warrior", "Peron"};
         int maxEnemyHealth = 75;
         int enemyAttackDamage = 25;
 
@@ -84,6 +84,7 @@ public class Main {
                     break Game;
                 }
                 System.out.println("---------------------------------------------------------------------");
+
                 System.out.println("#" + enemy + "Was deafeted! #");
                 System.out.println("# you have: " + health + " life left");
                 if (rand.nextInt(100) < healthPotionDropChance) {
@@ -108,7 +109,10 @@ public class Main {
                     System.out.println("You continue on your adventure");
                 }if (input.equals("2")) {
                     System.out.println("You exit the dungeon, succesful for your adventure");
-                  break Game;
+                    System.out.println("#########################");
+                    System.out.println("#THANKS FOR PLAYING #");
+                    System.out.println("########################");
+                    break Game;
                 }
 
                                             
@@ -116,9 +120,7 @@ public class Main {
 
 
             }
-            System.out.println("#########################"); 
-            System.out.println("#THANKS FOR PLAYING #");     
-            System.out.println("########################");  
+
         }
     }
 }
