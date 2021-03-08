@@ -1,6 +1,4 @@
-import jdk.swing.interop.SwingInterOpUtils;
 
-import javax.swing.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -32,13 +30,15 @@ public class Main {
         Game:
         while (running) {
             System.out.println("------------------------------------------------------------------");
-            int enemyHealth = rand.nextInt(health);
+            int enemyHealth = rand.nextInt(maxEnemyHealth);
             String enemy = enemies[rand.nextInt(enemies.length)];
             System.out.println("\t# " + enemy + " has appeared! #\n");
+
             while (enemyHealth > 0) {
 
-                System.out.println("\tYour Hp: +" + health);
+                System.out.println("\tYour Hp:" + health);
                 System.out.println("\t" + enemy + "'s HP:" + enemyHealth);
+                System.out.println("\n");
                 System.out.println("\tWhat would you like to do?");
                 System.out.println("\t1.Attack");
                 System.out.println("\t2.Drink health potion");
@@ -66,7 +66,8 @@ public class Main {
                                 + "\n\t> You have " + numHealthPots + "Health potions left\n");
 
 
-                    } else {
+                    }
+                    else {
                         System.out.println("\t You have no potion left!, defeat enemies for a chance to get one");
                     }
 
@@ -80,11 +81,11 @@ public class Main {
                 }
                 if (health < 1) {
                     System.out.println("You limp out of the dungeon, weak from the battle");
-                    break;
+                    break Game;
                 }
                 System.out.println("---------------------------------------------------------------------");
                 System.out.println("#" + enemy + "Was deafeted! #");
-                System.out.println("# you have:" + health + "life left");
+                System.out.println("# you have: " + health + " life left");
                 if (rand.nextInt(100) < healthPotionDropChance) {
                     numHealthPots++;
                     System.out.println("#The " + enemy + "dropped a health potion");
@@ -105,18 +106,19 @@ public class Main {
                 }
                 if (input.equals("1")) {
                     System.out.println("You continue on your adventure");
-                } else if (input.equals("2")) {
+                }if (input.equals("2")) {
                     System.out.println("You exit the dungeon, succesful for your adventure");
-                    break;
+                  break Game;
                 }
 
-                System.out.println("#########################");
-                System.out.println("#THANKS FOR PLAYING #");
-                System.out.println("########################");
+                                            
+
+
 
             }
-
-
+            System.out.println("#########################"); 
+            System.out.println("#THANKS FOR PLAYING #");     
+            System.out.println("########################");  
         }
     }
 }
