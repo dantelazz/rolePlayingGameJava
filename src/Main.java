@@ -12,7 +12,7 @@ public class Main {
         Random rand = new Random();
 
         // Variables enemigos
-        String[] enemies = {"Skeleton", "Zombie", "Warrior", "Peron"};
+        String[] enemies = {"Skeleton", "Zombie", "Warrior","Troll", "Fede"};
         int maxEnemyHealth = 75;
         int enemyAttackDamage = 25;
 
@@ -82,7 +82,7 @@ public class Main {
                 if (health < 1) {
                     System.out.println("You limp out of the dungeon, weak from the battle");
                     break Game;
-                }if(enemyHealth < 0){
+                }if(enemyHealth <= 0){
                 System.out.println("---------------------------------------------------------------------");
 
                 System.out.println("#" + enemy + "Was deafeted! #");
