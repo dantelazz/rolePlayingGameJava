@@ -82,7 +82,7 @@ public class Main {
                 if (health < 1) {
                     System.out.println("You limp out of the dungeon, weak from the battle");
                     break Game;
-                }
+                }if(enemyHealth < 0){
                 System.out.println("---------------------------------------------------------------------");
 
                 System.out.println("#" + enemy + "Was deafeted! #");
@@ -91,7 +91,7 @@ public class Main {
                     numHealthPots++;
                     System.out.println("#The " + enemy + "dropped a health potion");
                     System.out.println("# You have " + numHealthPots + " health potion(s)");
-
+                }
                 }
                 System.out.println("---------------------------------------------------------------------");
                 System.out.println("What would you like to do now adalid?");
